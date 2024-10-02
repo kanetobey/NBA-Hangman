@@ -1,0 +1,237 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Ensure body takes full height */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body should flex-grow to push the footer to the bottom */
+body {
+    background: linear-gradient(135deg, #2b2d42, #8d99ae);
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Main Container for the Game and Side Panel */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    flex-grow: 1; /* Allow the game to expand */
+    padding: 20px;
+}
+
+/* Side Panel */
+.side-panel {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 250px;
+    width: 100%;
+    margin-right: 20px;
+}
+
+/* Responsive Game Area */
+.game-container {
+    text-align: center;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer stays at the bottom */
+footer {
+    background-color: #2b2d42;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+footer:hover {
+    background-color: #3d405b; /* Darker shade on hover */
+    color: #ffe66d; /* Text color change on hover */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Word Display */
+#word-container {
+    font-size: 32px;
+    letter-spacing: 10px;
+    color: #ef233c;
+    border-bottom: 2px solid #ffffff;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Keyboard Layout */
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.number-row, .letter-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.keyboard-container button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    cursor: pointer;
+}
+
+.keyboard-container button.correct {
+    background-color: #4caf50; /* Green for correct letters */
+}
+
+.keyboard-container button.wrong {
+    background-color: #ef233c; /* Red for wrong letters */
+}
+
+/* Hover and Active States */
+.keyboard-container button:hover {
+    background-color: #555;
+    transform: translateY(-5px);
+}
+
+.keyboard-container button:active {
+    transform: translateY(0);
+}
+
+/* Scoreboard */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.scoreboard p {
+    font-size: 18px;
+    margin: 0;
+    color: #8d99ae;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+button {
+    background-color: #2b2d42;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #3d405b;
+    transform: translateY(-5px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .side-panel {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .game-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    #word-container {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+
+    .keyboard-container button {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .scoreboard p {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
+
+/* Remove bullet points from the guessed teams list */
+.side-panel ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0;
+    color: #ffffff;
+}
+
+/* Correct team color (green) */
+.correct-team {
+    color: #4caf50; /* Green for correct guesses */
+}
+
+/* Wrong team color (red) */
+.wrong-team {
+    color: #ef233c; /* Red for incorrect guesses */
+}

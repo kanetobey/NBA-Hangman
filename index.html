@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Side Panel for displaying guessed teams -->
+        <div class="side-panel">
+            <h2>Teams Guessed</h2>
+            <ul id="teams-guessed"></ul>
+        </div>
+
+        <!-- Game Container -->
+        <div class="game-container">
+            <h1>NBA Hangman</h1>
+            <p id="instructions">Guess the NBA team name by selecting letters!</p>
+
+            <div class="game-area">
+                <div id="word-container"></div>
+
+                <div class="keyboard-container" id="keyboard-container"></div>
+
+                <div class="scoreboard">
+                    <p>Wins: <span id="wins">0</span></p>
+                    <p>Losses: <span id="losses">0</span></p>
+                    <p>Chances Left: <span id="chances">5</span></p>
+                </div>
+
+                <div class="buttons">
+                    <button id="resetBtn">Start New Game</button>
+                    <button id="resetScoreBtn">Reset Score</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Copyright © Kane Tobey. All Rights Reserved.
+    </footer>
+
+    <script src="HangMan.js"></script>
+</body>
+</html>
